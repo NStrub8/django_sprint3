@@ -1,7 +1,5 @@
 from django.db import models
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
+from django.conf import settings
 
 
 class Category(models.Model):
@@ -55,10 +53,10 @@ class Post(models.Model):
         help_text=(
             'Если установить дату и время в будущем — '
             'можно делать отложенные публикации.'
-        )   
+        )
     )
     author = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         verbose_name='Автор публикации',
         on_delete=models.CASCADE
     )
