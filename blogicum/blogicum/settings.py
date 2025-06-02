@@ -1,11 +1,12 @@
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&xm_@&&w(lv_s4phxkicwfcumjt8aipxdh^udp(ch)u+bt^li8'
+SECRET_KEY = (
+    'django-insecure-&xm_@&&w(lv_s4phxkicwfcumjt8aipxdh^udp(ch)u+bt^li8'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -99,7 +100,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
+    BASE_DIR / 'locale',
 ]
 
 # Static files
